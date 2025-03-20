@@ -35,7 +35,15 @@ for chr in list(range(1,23))[::-1]:
 ##this special edition of elai takes phased genotype, fit a LD model,
 ##and impute the missing genotypes (those triple heterozygous) into paternal and maternal haplotype background. 
 ##the parental background with a high imptued dosage is assigned reference allele, the other alterantive allele.  
-##the output is in bimbam mgt format. Each SNP occupies three rows: genotype, paternal, maternal. 
+##this step will produce two files *.bgt.txt and *.snpab.txt. 
+
+    fmgt="output/"+out+".bgt.txt"
+    fsab="output/"+out+".snpab.txt"
+    cmd="~/work/poe/poe -s "+fsab + " -g " + fmgt + " -o "+f2
+    print(cmd)
+#    os.system(cmd)
+##poe transpose bgt.txt and write an output in bimbam mgt format. Each SNP occupies three rows: genotype, paternal, maternal.
+##output file name is *.snpab-bgt.txt
 
     kin = "~/data/rnaseq/geno/kinship.1477.rkm.gz"
     gt=f2+".snpab-bgt.txt"
