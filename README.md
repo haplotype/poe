@@ -66,3 +66,15 @@ for chr in list(range(1,23))[::-1]:
 ##this does joint analysis, that is, ignoring genotypes, but do y=Wa+pb1+mb0+u+e; 
 ##-b output Bayes factors (recommended for 2 d.f. tests).
 ```
+
+# POE eQTL results 
+In files maxbf3-cis1m-gene-tss-snpid-bf210j-zbetas-chisq.chrj, for j in 1,2,...,22, each row contains 11 columns (examples below). 
+They are ensembel_ID, Gene_ID, TSS, SNP, log10BF_g, log10BF_1, log10BF_0, log10BF_j, beta_1, beta_0, chisq. 
+BF_g is genotype Bayes factor, BF_1 is paternal Bayes factor, BF_0 is maternal Bayes factor, BF_j is joint Bayes factor. 
+beta_1 and beta_0 are effect estimates on paternal and maternal alleles in the joint test. chisq is a quantity to test whether beta_1 and beta_0 differ significanlty. 
+
+```
+ENSG00000100181 TPTEP1 16637040 rs1368646695:G:A:22:16100311 3.054 3.102 0.117 3.245 3.211885 0.931063 2.439953 
+ENSG00000100181 TPTEP1 16637040 rs1427186121:T:G:22:16103810 3.234 3.102 0.178 3.309 3.213478 1.01689 2.2024
+ENSG00000100181 TPTEP1 16637040 rs1378611428:T:A:22:16128063 5.015 4.871 0.379 5.254 4.09153 1.31405 3.313547
+```
